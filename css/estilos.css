@@ -44,8 +44,12 @@ body{
 .teclado img{
   width: 22%;
   height: 62.91px;
-  transition: transform 1s;
+  transition: all 0.3s ease-out;
 }
+.teclado img:hover {
+	transform: scale(1.2, 1.2);
+}
+
 @font-face {
   font-family: digital;
   src: url("../fonts/digital.ttf");
