@@ -1,8 +1,7 @@
+(function () {
 var display = document.getElementById("display");
 var one = document.getElementById("1");
 one.addEventListener("click",showScreen); 
-//one.addEventListener("onmousedown",showDecrease); 
-//one.addEventListener("onmouseup",showIncrease); 
 var two = document.getElementById("2");
 two.addEventListener("click",showScreen);
 var three = document.getElementById("3");
@@ -40,11 +39,6 @@ var plus = document.getElementById("mas");
 plus.addEventListener('click',addOperator);
 var equal = document.getElementById("igual");
 equal.addEventListener('click',addOperator);
-
-
-
-
-
 
 function makeOperation(number1, number2, accion){
     var result = 0.0;
@@ -101,31 +95,21 @@ function sleep(milliseconds) {
         break;
       }
     }
-    console.log("sleep");
  }
 
-
- function showIncrease(obj){
-    console.log("showIncrease");
+function showIncrease(obj){
     obj.style.transition="all 2s ease-in-out";
-    console.log(obj.style.transform);
     obj.style.transform="scale(1, 1)";
-    console.log(obj.style.transform);
 } 
 
 function showDecrease(obj){
-    console.log("showDecrease");
     obj.style.transform="scale(0.8, 0.8)";
     obj.style.transition="all 2s ease-in-out";
     setTimeout(showIncrease(obj), 3000);
-
 } 
 
 function showScreen(e){
-
     showDecrease(this);
-    
-
     if (display.innerHTML.length+1 <= 8){
         if (display.innerHTML == "0"){
             display.innerHTML = this.id;
@@ -133,10 +117,6 @@ function showScreen(e){
             display.innerHTML += this.id;
         }
     }
-    
-    
-    
-
 }
 
 function clearScreen(e){
@@ -156,4 +136,4 @@ function addSign(e){
         display.innerHTML = "-" + display.innerHTML;
     }
 }
-
+}());
